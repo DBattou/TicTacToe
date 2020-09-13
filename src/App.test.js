@@ -43,6 +43,6 @@ describe('Tic tac toe', () => {
     fireEvent.click(screen.getByTestId('square_4'))
     fireEvent.click(screen.getByTestId('square_6'))
 
-    expect(window.alert).toHaveBeenCalled(1)
+    expect(window.alert).toHaveBeenCalled()
   })
 })
