@@ -1,0 +1,10 @@
+.board_square {
+  height: 100%;
+  width: 100%;
+
+  background-color: white;
+
+  cursor: pointer;
+
+  border: 1px solid black;
+}
