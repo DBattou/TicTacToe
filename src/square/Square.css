@@ -8,3 +8,8 @@
 
   border: 1px solid black;
 }
+
+.board_square:disabled {
+  cursor: auto;
+  color: black;
+}

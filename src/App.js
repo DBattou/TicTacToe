@@ -6,7 +6,7 @@ import Board from './board/Board'
 function App() {
   return (
     <div className="App">
-      <Board></Board>
+      <Board gameSize={3}></Board>
     </div>
   )
 }
