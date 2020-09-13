@@ -1,10 +1,10 @@
 import React from 'react'
 import './Square.css'
 
-function Square() {
+function Square({ onClick, value }) {
   return (
-    <button type="button" className="board_square" onClick={() => console.log('Debug')}>
-      X
+    <button type="button" className="board_square" onClick={onClick} disabled={!!value}>
+      {value}
     </button>
   )
 }
