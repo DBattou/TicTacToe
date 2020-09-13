@@ -31,6 +31,9 @@ function App({ gameSize }) {
         gameState={gameState}
         changeGameState={changeGameState}
       ></Board>
+      <button onClick={() => setGameState(Array(gameSize * gameSize).fill(''))}>
+        Reset
+      </button>
     </div>
   )
 }
