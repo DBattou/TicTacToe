@@ -101,4 +101,56 @@ describe('Winning logic', () => {
       expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
     })
   })
+
+  describe('Winning on columns', () => {
+    test('Winner on the first column', () => {
+      // prettier-ignore
+      const boardState = [
+        'X', '', '',
+        'X', '', '',
+        'X', '', '',
+      ]
+      const boardSize = 3
+
+      expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+    })
+
+    test('Winner on the second column', () => {
+      // prettier-ignore
+      const boardState = [
+        '', 'X', '',
+        '', 'X', '',
+        '', 'X', '',
+      ]
+      const boardSize = 3
+
+      expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+    })
+
+    test('Winner on the last column', () => {
+      // prettier-ignore
+      const boardState = [
+        '', '', 'X',
+        '', '', 'X',
+        '', '', 'X',
+      ]
+      const boardSize = 3
+
+      expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+    })
+  })
+
+  describe('Winner on diagonal', () => {
+    test('Winner on diagonal', () => {
+      // prettier-ignore
+      const boardState = [
+              'X', '', '',
+              '', 'X', '',
+              '', '', 'X',
+            ]
+      const boardSize = 3
+
+      expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+    })
+  })
 })
