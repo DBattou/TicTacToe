@@ -2,11 +2,13 @@ import React, { useState, useCallback, useEffect } from 'react'
 
 import './App.css'
 import Board from './board/Board'
+import Score from './score/Score'
 import calculateWinner from './logic/calculateWinner'
 
 function App({ gameSize }) {
   const [gameState, setGameState] = useState(Array(gameSize * gameSize).fill(''))
   const [currentPlayer, setCurrentPlayer] = useState('X')
+  const [score, setScore] = useState({ X: 0, O: 0 })
 
   const changeGameState = useCallback(
     (boardIndex) => {
@@ -26,25 +28,35 @@ function App({ gameSize }) {
     [gameState, currentPlayer]
   )
 
+  const resetGameState = useCallback(() => {
+    setGameState(Array(gameSize * gameSize).fill(''))
+  }, [gameSize])
+
   useEffect(() => {
     const isWinner = calculateWinner({ boardState: gameState, boardSize: gameSize })
 
     if (isWinner) {
       const winner = currentPlayer === 'O' ? 'X' : 'O'
       alert(`THE ${winner} WIN`)
+      setScore({ ...score, [winner]: score[winner] + 1 })
+      resetGameState()
     }
-  }, [gameState, currentPlayer, gameSize])
+  }, [gameState, currentPlayer, gameSize, score, resetGameState])
 
   return (
     <div className="App">
-      <Board
-        gameSize={gameSize}
-        gameState={gameState}
-        changeGameState={changeGameState}
-      ></Board>
-      <button onClick={() => setGameState(Array(gameSize * gameSize).fill(''))}>
-        Reset
-      </button>
+      <section>
+        <Board
+          gameSize={gameSize}
+          gameState={gameState}
+          changeGameState={changeGameState}
+        ></Board>
+        <button onClick={resetGameState}>Reset</button>
+      </section>
+      <section>
+        <Score player={'O'} score={score.O} testId={'player_O_score'}></Score>
+        <Score player={'X'} score={score.X} testId={'player_X_score'}></Score>
+      </section>
     </div>
   )
 }
