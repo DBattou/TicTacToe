@@ -6,11 +6,12 @@
 - FEATURE 3 - Change board State when hitting a square 👍
 - FEATURE 4 - Ability to Reset game state 👍
 - FEATURE 5 - Calculate Winner 👍
-- FEATURE 6 - Display player score
+- FEATURE 6 - Display player score 👍
 - FEATURE 7 - Make the page responsive
 - FEATURE 7 - Store game state using Redux
 - FEATURE 8 - Give the game a better look
 - FEATURE 9 - Add automated test
+- FEATURE 10 - Display current player
 
 # CREATE-REAT-APP STUFF
 

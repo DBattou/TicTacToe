@@ -28,15 +28,20 @@ function App({ gameSize }) {
     [gameState, currentPlayer]
   )
 
+  const resetGameState = useCallback(() => {
+    setGameState(Array(gameSize * gameSize).fill(''))
+  }, [gameSize])
+
   useEffect(() => {
     const isWinner = calculateWinner({ boardState: gameState, boardSize: gameSize })
 
     if (isWinner) {
       const winner = currentPlayer === 'O' ? 'X' : 'O'
       alert(`THE ${winner} WIN`)
-      setScore({ ...score, [winner]: score.winner + 1 })
+      setScore({ ...score, [winner]: score[winner] + 1 })
+      resetGameState()
     }
-  }, [gameState, currentPlayer, gameSize, score])
+  }, [gameState, currentPlayer, gameSize, score, resetGameState])
 
   return (
     <div className="App">
@@ -46,13 +51,11 @@ function App({ gameSize }) {
           gameState={gameState}
           changeGameState={changeGameState}
         ></Board>
-        <button onClick={() => setGameState(Array(gameSize * gameSize).fill(''))}>
-          Reset
-        </button>
+        <button onClick={resetGameState}>Reset</button>
       </section>
       <section>
-        <Score player={'O'} score={score.O}></Score>
-        <Score player={'X'} score={score.X}></Score>
+        <Score player={'O'} score={score.O} testId={'player_O_score'}></Score>
+        <Score player={'X'} score={score.X} testId={'player_X_score'}></Score>
       </section>
     </div>
   )

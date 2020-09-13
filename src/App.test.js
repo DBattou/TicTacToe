@@ -2,9 +2,7 @@ import React from 'react'
 import { render, fireEvent, screen } from '@testing-library/react'
 import App from './App'
 
-jest.spyOn(window, 'alert').mockImplementation(() => {
-  console.log('TEST')
-})
+jest.spyOn(window, 'alert').mockImplementation(() => {})
 
 describe('Tic tac toe', () => {
   const gameSize = 3
@@ -34,7 +32,7 @@ describe('Tic tac toe', () => {
     expect(topLeftSquare).toHaveTextContent('')
   })
 
-  test('Can reset the game state by pressing the reset button ', () => {
+  test('A winning condition should pop an alert', () => {
     render(<App gameSize={gameSize}></App>)
 
     fireEvent.click(screen.getByTestId('square_0'))
@@ -44,5 +42,19 @@ describe('Tic tac toe', () => {
     fireEvent.click(screen.getByTestId('square_6'))
 
     expect(window.alert).toHaveBeenCalled()
+  })
+
+  test('After a winning condition the score shoudl be updated', () => {
+    render(<App gameSize={gameSize}></App>)
+
+    fireEvent.click(screen.getByTestId('square_0'))
+    fireEvent.click(screen.getByTestId('square_1'))
+    fireEvent.click(screen.getByTestId('square_3'))
+    fireEvent.click(screen.getByTestId('square_4'))
+    fireEvent.click(screen.getByTestId('square_6'))
+
+    const score = screen.getByTestId('player_X_score')
+
+    expect(score).toHaveTextContent('1points')
   })
 })
