@@ -1,10 +1,10 @@
 # ROADMAP
 
 - App running
-- FEATURE 1 - Create board
-- FEATURE 2 - Add buttons
-- FEATURE 3 - Change board State when hitting a square
-- FEATURE 4 - Ability to Reset game state
+- FEATURE 1 - Create board 👍
+- FEATURE 2 - Add buttons 👍
+- FEATURE 3 - Change board State when hitting a square 👍
+- FEATURE 4 - Ability to Reset game state 👍
 - FEATURE 5 - Calculate Winner
 - FEATURE 6 - Display player
 
