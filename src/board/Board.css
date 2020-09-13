@@ -1,0 +1,6 @@
+.App_board {
+  height: 310px;
+  width: 310px;
+
+  border: 3px solid green;
+}
