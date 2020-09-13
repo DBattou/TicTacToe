@@ -8,7 +8,6 @@ function Board({ gameSize }) {
 
   const changeGameState = useCallback(
     (boardIndex) => {
-      console.log({ boardIndex })
       const newGameState = [...gameState]
 
       if (newGameState[boardIndex] === '') {
@@ -26,20 +25,6 @@ function Board({ gameSize }) {
 
   return (
     <div className="App_board">
-      {/* 
-      <Square></Square>
-      <Square></Square>
-      <Square></Square>
-
-      <Square></Square>
-      <Square></Square>
-      <Square></Square>
-
-      <Square></Square>
-      <Square></Square>
-      <Square></Square>
-      */}
-
       {Array(gameSize * gameSize)
         .fill()
         .map((_, i) => (
@@ -47,6 +32,7 @@ function Board({ gameSize }) {
             key={`square_${i}`}
             onClick={() => changeGameState(i)}
             value={gameState[i]}
+            testId={`square_${i}`}
           ></Square>
         ))}
     </div>
