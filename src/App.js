@@ -1,7 +1,8 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 
 import './App.css'
 import Board from './board/Board'
+import calculateWinner from './logic/calculateWinner'
 
 function App({ gameSize }) {
   const [gameState, setGameState] = useState(Array(gameSize * gameSize).fill(''))
@@ -17,12 +18,22 @@ function App({ gameSize }) {
           : (newGameState[boardIndex] = 'X')
 
         setGameState(newGameState)
-        const nextPlayer = currentPlayer === 'O' ? 'X' : 'O'
-        setCurrentPlayer(nextPlayer)
       }
+
+      const nextPlayer = currentPlayer === 'O' ? 'X' : 'O'
+      setCurrentPlayer(nextPlayer)
     },
     [gameState, currentPlayer]
   )
+
+  useEffect(() => {
+    const isWinner = calculateWinner({ boardState: gameState, boardSize: gameSize })
+
+    if (isWinner) {
+      const winner = currentPlayer === 'O' ? 'X' : 'O'
+      alert(`THE ${winner} WIN`)
+    }
+  }, [gameState, currentPlayer, gameSize])
 
   return (
     <div className="App">
