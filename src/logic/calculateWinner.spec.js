@@ -167,4 +167,84 @@ describe('Winning logic', () => {
       expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
     })
   })
+
+  describe('Some additionnal tests', () => {
+    test('There is a draw', () => {
+      // prettier-ignore
+      const boardState = [
+              'X', 'O', 'X',
+              'O', 'O', 'X',
+              'X', 'X', 'O',
+            ]
+      const boardSize = 3
+
+      expect(calculateWinner({ boardState, boardSize })).toBeFalsy()
+    })
+
+    test('O is winner on diagonal', () => {
+      // prettier-ignore
+      const boardState = [
+              'X', 'X', 'O',
+              'O', 'O', 'X',
+              'O', '', '',
+            ]
+      const boardSize = 3
+
+      expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+    })
+
+    test('O is winner on diagonal', () => {
+      // prettier-ignore
+      const boardState = [
+              'O', 'X', 'X',
+              'O', 'O', 'X',
+              'X', '', 'O',
+            ]
+      const boardSize = 3
+
+      expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+    })
+
+    test('No winner', () => {
+      // prettier-ignore
+      const boardState = [
+              'O', '', '',
+              '', '', 'X',
+              'X', '', 'O',
+            ]
+      const boardSize = 3
+
+      expect(calculateWinner({ boardState, boardSize })).toBeFalsy()
+    })
+
+    test('No winner on a 6 by 6 board', () => {
+      // prettier-ignore
+      const boardState = [
+              'O', '', '','O', '', '',
+              '', '', 'X','', '', 'X',
+              'X', '', 'O','X', '', 'O',
+              'O', '', '','O', '', '',
+              '', '', 'X','', '', 'X',
+              'X', '', 'O','X', '', 'O',
+            ]
+      const boardSize = 6
+
+      expect(calculateWinner({ boardState, boardSize })).toBeFalsy()
+    })
+
+    test('X winner on a 6 by 6 board', () => {
+      // prettier-ignore
+      const boardState = [
+              'O', '', '','O', '', '',
+              'X', 'X', 'X','X', 'X', 'X',
+              'X', '', 'O','X', '', 'O',
+              'O', '', '','O', '', '',
+              '', '', 'X','', '', 'X',
+              'X', '', 'O','X', '', 'O',
+            ]
+      const boardSize = 6
+
+      expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+    })
+  })
 })
