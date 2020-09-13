@@ -28,51 +28,77 @@ describe('Winning logic', () => {
     expect(calculateWinner({ boardState, boardSize })).toBeFalsy()
   })
 
-  test('Winner if first row is full of "X"', () => {
-    // prettier-ignore
-    const boardState = [
-      'X', 'X', 'X',
-      '', '', '',
-      '', '', '',
-    ]
-    const boardSize = 3
+  describe('Winning on rows', () => {
+    test('Winner if first row is full of "X"', () => {
+      // prettier-ignore
+      const boardState = [
+        'X', 'X', 'X',
+        '', '', '',
+        '', '', '',
+      ]
+      const boardSize = 3
 
-    expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
-  })
+      expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+    })
 
-  test('Winner if the second row is full of "X"', () => {
-    // prettier-ignore
-    const boardState = [
-          '', '', '',
-          'X', 'X', 'X',
-          '', '', '',
-        ]
-    const boardSize = 3
+    test('Winner if the second row is full of "X"', () => {
+      // prettier-ignore
+      const boardState = [
+            '', '', '',
+            'X', 'X', 'X',
+            '', '', '',
+          ]
+      const boardSize = 3
 
-    expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
-  })
+      expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+    })
 
-  test('Winner if the last row is full of "X"', () => {
-    // prettier-ignore
-    const boardState = [
-          '', '', '',
-          '', '', '',
-          'X', 'X', 'X',
-        ]
-    const boardSize = 3
+    test('Winner if the last row is full of "X"', () => {
+      // prettier-ignore
+      const boardState = [
+            '', '', '',
+            '', '', '',
+            'X', 'X', 'X',
+          ]
+      const boardSize = 3
 
-    expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
-  })
+      expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+    })
 
-  test('Works fine with the "O" too', () => {
-    // prettier-ignore
-    const boardState = [
-          '', '', '',
-          'O', 'O', 'O',
-          '', '', '',
-        ]
-    const boardSize = 3
+    test('Works fine with the "O" too', () => {
+      // prettier-ignore
+      const boardState = [
+            '', '', '',
+            'O', 'O', 'O',
+            '', '', '',
+          ]
+      const boardSize = 3
 
-    expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+      expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+    })
+
+    test('No Winner if there is a draw', () => {
+      // prettier-ignore
+      const boardState = [
+        'O', 'x', 'O',
+        'O', 'X', 'X',
+        'X', 'O', 'X',
+      ]
+      const boardSize = 3
+
+      expect(calculateWinner({ boardState, boardSize })).toBeFalsy()
+    })
+
+    test('Winner after some moves', () => {
+      // prettier-ignore
+      const boardState = [
+        'X', 'O', 'O',
+        'X', 'X', 'X',
+        'O', '', '',
+      ]
+      const boardSize = 3
+
+      expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+    })
   })
 })
