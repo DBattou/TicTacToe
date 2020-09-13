@@ -1,3 +1,15 @@
+# ROADMAP
+
+- App running
+- FEATURE 1 - Create board
+- FEATURE 2 - Add buttons 2
+- FEATURE 3 - Change board State when hitting a square 3
+- FEATURE 4 - Ability to Reset game state 4
+- FEATURE 5 - Calculate Winner 5
+- FEATURE 6 - Display player
+
+# CREATE-REAT-APP STUFF
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
