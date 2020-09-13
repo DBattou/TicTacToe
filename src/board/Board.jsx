@@ -1,28 +1,8 @@
-import React, { useState, useCallback } from 'react'
+import React from 'react'
 import './Board.css'
 import Square from '../square/Square'
 
-function Board({ gameSize }) {
-  const [gameState, setGameState] = useState(Array(gameSize * gameSize).fill(''))
-  const [currentPlayer, setCurrentPlayer] = useState('X')
-
-  const changeGameState = useCallback(
-    (boardIndex) => {
-      const newGameState = [...gameState]
-
-      if (newGameState[boardIndex] === '') {
-        currentPlayer === 'O'
-          ? (newGameState[boardIndex] = 'O')
-          : (newGameState[boardIndex] = 'X')
-
-        setGameState(newGameState)
-        const nextPlayer = currentPlayer === 'O' ? 'X' : 'O'
-        setCurrentPlayer(nextPlayer)
-      }
-    },
-    [gameState, currentPlayer]
-  )
-
+function Board({ gameSize, gameState, changeGameState }) {
   return (
     <div className="App_board">
       {Array(gameSize * gameSize)
