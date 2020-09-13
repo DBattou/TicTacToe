@@ -1,9 +1,17 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, fireEvent, screen } from '@testing-library/react'
 import App from './App'
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />)
-  const linkElement = getByText(/learn react/i)
-  expect(linkElement).toBeInTheDocument()
+describe('Tic tac toe', () => {
+  test('Can click on the top left square', async () => {
+    render(<App></App>)
+    const topLeftSquare = screen.getByTestId('square_0')
+    fireEvent.click(topLeftSquare)
+
+    expect(topLeftSquare).toHaveTextContent('X')
+
+    fireEvent.click(topLeftSquare)
+
+    expect(topLeftSquare).toHaveTextContent('X')
+  })
 })
