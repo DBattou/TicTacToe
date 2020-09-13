@@ -153,4 +153,18 @@ describe('Winning logic', () => {
       expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
     })
   })
+
+  describe('Winner on the opposite diagonal', () => {
+    test('Winner on opposite diagonal', () => {
+      // prettier-ignore
+      const boardState = [
+              '', '', 'X',
+              '', 'X', '',
+              'X', '', '',
+            ]
+      const boardSize = 3
+
+      expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+    })
+  })
 })

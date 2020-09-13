@@ -53,6 +53,17 @@ function isAWinnerOnDiagonal({ boardState, boardSize }) {
   return true
 }
 
+function isAWinnerOnOppositeDiagonal({ boardState, boardSize }) {
+  const player = boardState[boardSize * (boardSize - 1)]
+
+  if (player === '') return false
+
+  for (let i = 0; i < boardSize; i++)
+    if (boardState[i * boardSize + (boardSize - 1) - i] !== player) return false
+
+  return true
+}
+
 export default function calculateWinner({ boardState, boardSize }) {
   if (!boardState || !boardSize) return false
 
@@ -61,6 +72,8 @@ export default function calculateWinner({ boardState, boardSize }) {
   if (isAWinnerOnColumns({ boardState, boardSize })) return true
 
   if (isAWinnerOnDiagonal({ boardState, boardSize })) return true
+
+  if (isAWinnerOnOppositeDiagonal({ boardState, boardSize })) return true
 
   return false
 }
