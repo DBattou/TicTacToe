@@ -39,4 +39,40 @@ describe('Winning logic', () => {
 
     expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
   })
+
+  test('Winner if the second row is full of "X"', () => {
+    // prettier-ignore
+    const boardState = [
+          '', '', '',
+          'X', 'X', 'X',
+          '', '', '',
+        ]
+    const boardSize = 3
+
+    expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+  })
+
+  test('Winner if the last row is full of "X"', () => {
+    // prettier-ignore
+    const boardState = [
+          '', '', '',
+          '', '', '',
+          'X', 'X', 'X',
+        ]
+    const boardSize = 3
+
+    expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+  })
+
+  test('Works fine with the "O" too', () => {
+    // prettier-ignore
+    const boardState = [
+          '', '', '',
+          'O', 'O', 'O',
+          '', '', '',
+        ]
+    const boardSize = 3
+
+    expect(calculateWinner({ boardState, boardSize })).toBeTruthy()
+  })
 })
