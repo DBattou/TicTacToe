@@ -1,0 +1,13 @@
+.App_board {
+  display: grid;
+  justify-content: space-between;
+  align-content: space-between;
+
+  grid-template-columns: [col-1] 100px [col-2] 100px [col-3] 100px;
+  grid-template-rows: [row-1] 100px [row-2] 100px [row-3] 100px;
+
+  height: 310px;
+  width: 310px;
+
+  border: 3px solid green;
+}
