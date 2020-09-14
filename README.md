@@ -7,11 +7,12 @@
 - FEATURE 4 - Ability to Reset game state 👍
 - FEATURE 5 - Calculate Winner 👍
 - FEATURE 6 - Display player score 👍
-- FEATURE 7 - Make the page responsive
-- FEATURE 7 - Store game state using Redux
-- FEATURE 8 - Give the game a better look
-- FEATURE 9 - Add automated test
-- FEATURE 10 - Display current player
+- FEATURE 7 - Host on Heroku
+- FEATURE 8 - Store game state using Redux
+- FEATURE 9 - Make the page responsive
+- FEATURE 10 - Add automated test
+- FEATURE 11 - Display current player
+- FEATURE 12 - Give the game a better look
 
 # CREATE-REAT-APP STUFF
 
