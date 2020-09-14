@@ -1,14 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import './Score.css'
 
 function Score({ score }) {
   return (
-    <section>
-      <p>
-        O score : <span data-testid={'player_O_score'}>{score?.O}points</span>
+    <section className="App-score">
+      <h1 className="App-score-h1">SCORE</h1>
+      <p className="App-score-p1">
+        <span role="img" aria-label="O">
+          ⭕️
+        </span>
+        <span data-testid={'player_O_score'}>{score?.O}-pts</span>
       </p>
-      <p>
-        X score : <span data-testid={'player_X_score'}>{score?.X}points</span>
+      <p className="App-score-p2">
+        <span role="img" aria-label="X">
+          ❌
+        </span>
+        <span data-testid={'player_X_score'}>{score?.X}-pts</span>
       </p>
     </section>
   )
