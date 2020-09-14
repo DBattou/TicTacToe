@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Score from './Score'
+import ScoreBoard from './ScoreBoard'
 
 // Selectors
 
@@ -10,4 +10,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Score)
+export default connect(mapStateToProps)(ScoreBoard)
