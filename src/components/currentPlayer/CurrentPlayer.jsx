@@ -2,7 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 function CurrentPlayer({ currentPlayer }) {
-  return <section>{`It's up to ${currentPlayer} to play`}</section>
+  return (
+    <section>
+      <p data-testid="currentPlayer_display">{`It's up to ${currentPlayer} to play`}</p>
+    </section>
+  )
 }
 
 const mapStateToProps = (state) => {

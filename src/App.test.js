@@ -58,4 +58,14 @@ describe('Tic tac toe', () => {
 
     expect(score).toHaveTextContent('1points')
   })
+
+  test('Display the correct current player', () => {
+    render(<App gameSize={gameSize}></App>, { intialState: initialState })
+
+    fireEvent.click(screen.getByTestId('square_0'))
+
+    const playerDisplay = screen.getByTestId('currentPlayer_display')
+
+    expect(playerDisplay).toHaveTextContent("It's up to O to play")
+  })
 })
