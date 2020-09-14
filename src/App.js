@@ -1,12 +1,9 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 import './App.css'
 import Board from './components/board/Board'
 import Score from './components/score/Score'
 import ResetButton from './components/resetButton/ResetButton'
-
-import { resetGame, changeScore } from './redux/actions'
 
 function App() {
   return (
@@ -20,17 +17,4 @@ function App() {
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    winner: state.winner,
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    resetGame: () => dispatch(resetGame()),
-    changeScore: (winner) => dispatch(changeScore(winner)),
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default App
