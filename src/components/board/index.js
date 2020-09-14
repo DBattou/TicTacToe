@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { markSquare } from '../actions'
+import { markSquare } from '../../redux/actions'
 import Board from '../Board'
 
 // Selectors

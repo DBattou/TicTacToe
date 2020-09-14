@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react'
 
 import './App.css'
 import Board from './components/board/Board'
-import ScoreBoard from './components/scoreBoard/ScoreBoard'
+import Score from './components/score/Score'
 import ResetButton from './components/resetButton/ResetButton'
 import calculateWinner from './logic/calculateWinner'
 
@@ -54,7 +54,7 @@ function App({ gameSize }) {
         ></Board>
         <ResetButton resetGameState={resetGameState}></ResetButton>
       </section>
-      <ScoreBoard score={score} />
+      <Score score={score} />
     </div>
   )
 }
