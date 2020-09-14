@@ -9,10 +9,12 @@ import CurrentPlayer from './components/currentPlayer/CurrentPlayer'
 function App() {
   return (
     <div className="App">
-      <CurrentPlayer />
-      <Board />
-      <ResetButton />
-      <Score />
+      <div className="App-container">
+        <CurrentPlayer />
+        <Board />
+        <ResetButton />
+        <Score />
+      </div>
     </div>
   )
 }

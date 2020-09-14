@@ -12,11 +12,11 @@ describe('Tic tac toe', () => {
     const topLeftSquare = screen.getByTestId('square_0')
     fireEvent.click(topLeftSquare)
 
-    expect(topLeftSquare).toHaveTextContent('X')
+    expect(topLeftSquare).toHaveTextContent('❌')
 
     fireEvent.click(topLeftSquare)
 
-    expect(topLeftSquare).toHaveTextContent('X')
+    expect(topLeftSquare).toHaveTextContent('❌')
   })
 
   test('Can reset the game state by pressing the reset button ', () => {
@@ -26,7 +26,7 @@ describe('Tic tac toe', () => {
 
     fireEvent.click(topLeftSquare)
 
-    expect(topLeftSquare).toHaveTextContent('X')
+    expect(topLeftSquare).toHaveTextContent('❌')
 
     fireEvent.click(resetButton)
 
@@ -56,7 +56,7 @@ describe('Tic tac toe', () => {
 
     const score = screen.getByTestId('player_X_score')
 
-    expect(score).toHaveTextContent('1points')
+    expect(score).toHaveTextContent('1-pts')
   })
 
   test('Display the correct current player', () => {
@@ -66,6 +66,6 @@ describe('Tic tac toe', () => {
 
     const playerDisplay = screen.getByTestId('currentPlayer_display')
 
-    expect(playerDisplay).toHaveTextContent("It's up to O to play")
+    expect(playerDisplay).toHaveTextContent("It's up to ⭕️ to play")
   })
 })

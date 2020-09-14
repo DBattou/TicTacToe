@@ -1,12 +1,16 @@
 .board_square {
   height: 100%;
   width: 100%;
-
   background-color: white;
-
+  border: none;
   cursor: pointer;
 
-  border: 1px solid black;
+  transition-duration: 0.4s;
+  outline: none;
+}
+
+.board_square:hover:enabled {
+  background-color: lightgray;
 }
 
 .board_square:disabled {

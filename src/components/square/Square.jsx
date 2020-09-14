@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Square.css'
 
 function Square({ onClick, value, testId }) {
+  const [player, setPlayer] = useState('')
+
+  useEffect(() => {
+    if (value) {
+      setPlayer(value === 'X' ? '❌' : '⭕️')
+      return
+    }
+
+    setPlayer('')
+  }, [value])
+
   return (
     <button
       type="button"
@@ -10,7 +21,9 @@ function Square({ onClick, value, testId }) {
       disabled={!!value}
       data-testid={testId}
     >
-      {value}
+      <span role="img" aria-label="player">
+        {player}
+      </span>
     </button>
   )
 }
