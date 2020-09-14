@@ -56,6 +56,6 @@ describe('Tic tac toe', () => {
 
     const score = screen.getByTestId('player_X_score')
 
-    expect(score).toHaveTextContent('1points')
+    expect(score).toHaveTextContent('xcvsxwc')
   })
 })
