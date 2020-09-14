@@ -10,13 +10,15 @@ import {
   changeScore,
 } from '../../redux/actions'
 
+import alert from '../../utils/alert'
+
 function Board({ gameSize, gameState, changeGameState, winner, resetGame, changeScore }) {
   useEffect(() => {
     if (winner) {
-      if (window.confirm(`Player ${winner} wins !`)) {
-        resetGame()
-        changeScore(winner)
-      }
+      // Asynchronous alert, in order to let the children of Board rerender
+      alert.win(winner, resetGame, changeScore)
+      resetGame()
+      changeScore(winner)
     }
   }, [winner, resetGame, changeScore])
 

@@ -22,5 +22,6 @@ View live demo ==> https://georges-tictactoe.herokuapp.com/ ✅
 - FEATURE 15 - Add the ability to change the board size
 - FEATURE 16 - Customize Player look
 - FEATURE 17 - Add redux Chrome devtools
+- FEATURE 18 - Replace window.alert with an overlay/modal
 
 ## Ressources

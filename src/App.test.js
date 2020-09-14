@@ -3,6 +3,9 @@ import { render, fireEvent, screen } from './test-utils'
 import App from './App'
 import { initialState } from './redux/reducer'
 
+import alert from './utils/alert'
+
+jest.spyOn(alert, 'win').mockImplementation(() => true)
 jest.spyOn(window, 'confirm').mockImplementation(() => true)
 
 describe('Tic tac toe', () => {
@@ -42,7 +45,7 @@ describe('Tic tac toe', () => {
     fireEvent.click(screen.getByTestId('square_4'))
     fireEvent.click(screen.getByTestId('square_6'))
 
-    expect(window.confirm).toHaveBeenCalled()
+    expect(alert.win).toHaveBeenCalled()
   })
 
   test('After a winning condition the score shoudl be updated', () => {
