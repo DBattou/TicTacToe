@@ -6,8 +6,8 @@
   grid-template-columns: [col-1] 100px [col-2] 100px [col-3] 100px;
   grid-template-rows: [row-1] 100px [row-2] 100px [row-3] 100px;
 
-  min-height: 311px;
-  min-width: 311px;
+  min-height: 310px;
+  min-width: 310px;
 
   background-color: black;
 }
