@@ -1,8 +1,8 @@
 import React, { useState, useCallback, useEffect } from 'react'
 
 import './App.css'
-import Board from './board/Board'
-import Score from './score/Score'
+import Board from './components/board/Board'
+import Score from './components/score/Score'
 import calculateWinner from './logic/calculateWinner'
 
 function App({ gameSize }) {
