@@ -4,11 +4,11 @@ import { markSquare, resetGame, changeCurrentPlayer, changeScore } from './actio
 describe('Reducer', () => {
   test('MARK_SQUARE action ', () => {
     const state = initialState
-    const action = markSquare('O', 3)
+    const action = markSquare(3)
 
     // prettier-ignore
     const newGameState = ['', '', '', 
-                          'O', '', '', 
+                          'X', '', '', 
                           '', '', '', ]
 
     expect(tictactoe(state, action)).toEqual({ ...initialState, gameState: newGameState })

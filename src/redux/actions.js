@@ -5,10 +5,9 @@ export const CHANGE_CURRENT_PLAYER = 'CHANGE_CURRENT_PLAYER'
 export const CHANGE_SCORE = 'CHANGE_SCORE'
 
 // Action creators
-export function markSquare(player, squarePosition) {
+export function markSquare(squarePosition) {
   return {
     type: MARK_SQUARE,
-    player,
     squarePosition,
   }
 }

@@ -13,7 +13,7 @@ export default function tictactoe(state = initialState, action) {
   switch (action.type) {
     case MARK_SQUARE:
       const newGameState = [...state.gameState]
-      newGameState[action.squarePosition] = action.player
+      newGameState[action.squarePosition] = state.currentPlayer
 
       return { ...state, gameState: newGameState }
     case RESET_GAME:
