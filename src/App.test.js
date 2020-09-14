@@ -1,8 +1,9 @@
 import React from 'react'
-import { render, fireEvent, screen } from '@testing-library/react'
+import { render, fireEvent, screen } from './test-utils'
 import App from './App'
+import { initialState } from './redux/reducer'
 
-jest.spyOn(window, 'alert').mockImplementation(() => {})
+jest.spyOn(window, 'confirm').mockImplementation(() => true)
 
 describe('Tic tac toe', () => {
   const gameSize = 3
@@ -19,7 +20,7 @@ describe('Tic tac toe', () => {
   })
 
   test('Can reset the game state by pressing the reset button ', () => {
-    render(<App gameSize={gameSize}></App>)
+    render(<App gameSize={gameSize}></App>, { intialState: initialState })
     const topLeftSquare = screen.getByTestId('square_0')
     const resetButton = screen.getByText('Reset')
 
@@ -33,7 +34,7 @@ describe('Tic tac toe', () => {
   })
 
   test('A winning condition should pop an alert', () => {
-    render(<App gameSize={gameSize}></App>)
+    render(<App gameSize={gameSize}></App>, { intialState: initialState })
 
     fireEvent.click(screen.getByTestId('square_0'))
     fireEvent.click(screen.getByTestId('square_1'))
@@ -41,11 +42,11 @@ describe('Tic tac toe', () => {
     fireEvent.click(screen.getByTestId('square_4'))
     fireEvent.click(screen.getByTestId('square_6'))
 
-    expect(window.alert).toHaveBeenCalled()
+    expect(window.confirm).toHaveBeenCalled()
   })
 
   test('After a winning condition the score shoudl be updated', () => {
-    render(<App gameSize={gameSize}></App>)
+    render(<App gameSize={gameSize}></App>, { intialState: initialState })
 
     fireEvent.click(screen.getByTestId('square_0'))
     fireEvent.click(screen.getByTestId('square_1'))
