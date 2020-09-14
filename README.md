@@ -1,6 +1,6 @@
 ## Live URL
 
-View live demo ==> https://georges-ticatactoe.herokuapp.com/  💪
+View live demo ==> https://georges-ticatactoe.herokuapp.com/  KO
 
 ## Roadmap
 
