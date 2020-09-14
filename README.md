@@ -10,11 +10,15 @@
 - FEATURE 7 - Host on Heroku
 - FEATURE 8 - Store game state using Redux
 - FEATURE 9 - Make the page responsive
-- FEATURE 10 - Add automated test
-- FEATURE 11 - Display current player
-- FEATURE 12 - Give the game a better look
+- FEATURE 10 - Add BEM css notation
+- FEATURE 11 - Add automated test
+- FEATURE 12 - Display current player
+- FEATURE 13 - Give the game a better look
+- FEATURE 14 - Add header, menu, footer
+- FEATURE 15 - Add the ability to change the board size
+- FEATURE 16 - Customize Player look
 
-# CREATE-REAT-APP STUFF
+# CREATE-REACT-APP STUFF
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
