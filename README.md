@@ -1,6 +1,6 @@
 ## Live URL
 
-View live demo ==> https://georges-ticatactoe.herokuapp.com/  KO
+View live demo ==> https://georges-tictactoe.herokuapp.com/   ✅
 
 ## Roadmap
 
@@ -11,7 +11,7 @@ View live demo ==> https://georges-ticatactoe.herokuapp.com/  KO
 - FEATURE 4 - Ability to Reset game state 👍
 - FEATURE 5 - Calculate Winner 👍
 - FEATURE 6 - Display player score 👍
-- FEATURE 7 - Host on Heroku
+- FEATURE 7 - Host on Heroku 👍
 - FEATURE 8 - Store game state using Redux
 - FEATURE 9 - Make the page responsive
 - FEATURE 10 - Add BEM css notation
