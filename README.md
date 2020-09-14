@@ -21,5 +21,6 @@ View live demo ==> https://georges-tictactoe.herokuapp.com/ ✅
 - FEATURE 14 - Add header, menu, footer
 - FEATURE 15 - Add the ability to change the board size
 - FEATURE 16 - Customize Player look
+- FEATURE 17 - Add redux Chrome devtools
 
 ## Ressources
