@@ -27,7 +27,7 @@ View live demo ==> https://georges-tictactoe.herokuapp.com/ ✅
 - FEATURE 20 - Lobby, Multiplayer distant connection
 - FEATURE 21 - Add in app chat
 - FEATURE 22 - Display connected USER
-- FEATURE 23 - Convert the website into a PWA
+- FEATURE 23 - Convert the website into a PWA 👍
 ...
 
 ## Ressources
