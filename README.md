@@ -13,7 +13,7 @@ View live demo ==> https://georges-tictactoe.herokuapp.com/ ✅
 - FEATURE 6 - Display player score 👍
 - FEATURE 7 - Host on Heroku 👍
 - FEATURE 8 - Store game state using Redux 👍
-- FEATURE 9 - Make the page responsive 👍??
+- FEATURE 9 - Make the page responsive 👍
 - FEATURE 10 - Add BEM css notation
 - FEATURE 11 - Add automated test 👍
 - FEATURE 12 - Display current player 👍
@@ -27,6 +27,6 @@ View live demo ==> https://georges-tictactoe.herokuapp.com/ ✅
 - FEATURE 20 - Lobby, Multiplayer distant connection
 - FEATURE 21 - Add in app chat
 - FEATURE 22 - Display connected USER
-...
+  ...
 
 ## Ressources

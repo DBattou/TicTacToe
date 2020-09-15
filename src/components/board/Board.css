@@ -9,5 +9,8 @@
   min-height: 310px;
   min-width: 310px;
 
+  max-height: 310px;
+  max-width: 310px;
+
   background-color: black;
 }
