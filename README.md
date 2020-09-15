@@ -20,8 +20,13 @@ View live demo ==> https://georges-tictactoe.herokuapp.com/ ✅
 - FEATURE 13 - Give the game a better look 👍
 - FEATURE 14 - Add header, menu, footer
 - FEATURE 15 - Add the ability to change the board size
-- FEATURE 16 - Customize Player look
+- FEATURE 16 - Customize Player look, name
 - FEATURE 17 - Add redux Chrome devtools
-- FEATURE 18 - Replace window.alert with an overlay/modal
+- FEATURE 18 - Replace win window.alert with an overlay/modal
+- FEATURE 19 - Add backend
+- FEATURE 20 - Lobby, Multiplayer distant connection
+- FEATURE 21 - Add in app chat
+- FEATURE 22 - Display connected USER
+...
 
 ## Ressources
