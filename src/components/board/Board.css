@@ -1,18 +1,19 @@
 .App__section-board {
-  display: flex;
-  padding: 10px;
-  justify-content: center;
-}
-
-.Board__borderLimit {
   display: grid;
-
   justify-content: center;
-
-  grid-template-columns: repeat(3, 8vw);
-  grid-template-rows: repeat(3, 8vw);
-
   grid-gap: 1vw;
+
+  height: 50vw;
+  width: 50vw;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  max-width: min(70vh, 300px);
+  max-height: min(70vh, 300px);
+
+  min-height: 150px;
+  min-width: 150px;
 
   background-color: grey;
 }
