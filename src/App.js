@@ -11,18 +11,31 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-
-      <Grid container spacing={2} direction="row" justify="center" alignItems="center">
-        <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-          <CurrentPlayer></CurrentPlayer>
+      <div className="App__main">
+        <Grid
+          container
+          style={{ height: '100%', flexGrow: '1' }}
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+          <Grid
+            item
+            container
+            xs={12}
+            sm={6}
+            direction="row"
+            justify="center"
+            alignItems="center"
+          >
+            <Board></Board>
+          </Grid>
+          <Grid item xs={12} sm={3}>
+            <CurrentPlayer></CurrentPlayer>
+            <Score></Score>
+          </Grid>
         </Grid>
-        <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-          <Board></Board>
-        </Grid>
-        <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-          <Score></Score>
-        </Grid>
-      </Grid>
+      </div>
     </div>
   )
 }
