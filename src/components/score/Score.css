@@ -1,6 +1,5 @@
 .App__section-score {
   display: grid;
-  border: 5px dashed blue;
   justify-content: space-between;
 
   grid-template-columns: 100px 100px;

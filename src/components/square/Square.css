@@ -2,8 +2,7 @@
   height: 100%;
   width: 100%;
 
-  box-sizing: border-box;
-  border: 5px dashed brown;
+  border: none;
 
   background-color: white;
   cursor: pointer;
