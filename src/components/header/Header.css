@@ -24,7 +24,10 @@
   font-weight: normal;
   font-style: normal;
 
-  font-size: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+
+  font-size: 30px;
   color: black;
 }
 
@@ -35,7 +38,7 @@
 
   margin-right: 20px;
   height: 30px;
-  width: 100px;
+  width: 60px;
   background-color: lightseagreen;
   border: 2px solid yellow;
   border-radius: 5px;
