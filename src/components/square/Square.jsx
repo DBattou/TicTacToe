@@ -16,7 +16,7 @@ function Square({ onClick, value, testId }) {
   return (
     <button
       type="button"
-      className="board_square"
+      className="Board__square"
       onClick={onClick}
       disabled={!!value}
       data-testid={testId}

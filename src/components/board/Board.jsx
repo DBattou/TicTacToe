@@ -23,18 +23,20 @@ function Board({ gameSize, gameState, changeGameState, winner, resetGame, change
   }, [winner, resetGame, changeScore])
 
   return (
-    <div className="App_board">
-      {Array(gameSize * gameSize)
-        .fill()
-        .map((_, i) => (
-          <Square
-            key={`square_${i}`}
-            onClick={() => changeGameState(i)}
-            value={gameState[i]}
-            testId={`square_${i}`}
-          ></Square>
-        ))}
-    </div>
+    <section className="App__section-board">
+      <div className="Board__borderLimit">
+        {Array(gameSize * gameSize)
+          .fill()
+          .map((_, i) => (
+            <Square
+              key={`square_${i}`}
+              onClick={() => changeGameState(i)}
+              value={gameState[i]}
+              testId={`square_${i}`}
+            ></Square>
+          ))}
+      </div>
+    </section>
   )
 }
 
