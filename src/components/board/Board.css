@@ -1,7 +1,7 @@
 .App__section-board {
   display: grid;
   justify-content: center;
-  grid-gap: 1vw;
+  grid-gap: 4px;
 
   height: 50vw;
   width: 50vw;
