@@ -45,7 +45,7 @@ describe('Tic tac toe', () => {
     fireEvent.click(screen.getByTestId('square_4'))
     fireEvent.click(screen.getByTestId('square_6'))
 
-    expect(alert.win).toHaveBeenCalled()
+    expect(screen.queryByTestId('winingOverlay')).toBeTruthy()
   })
 
   test('After a winning condition the score shoudl be updated', () => {

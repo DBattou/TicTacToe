@@ -10,17 +10,12 @@ import {
   changeScore,
 } from '../../redux/actions'
 
-import alert from '../../utils/alert'
-
 function Board({ gameSize, gameState, changeGameState, winner, resetGame, changeScore }) {
   useEffect(() => {
     if (winner) {
-      // Asynchronous alert, in order to let the children of Board rerender
-      alert.win(winner, resetGame, changeScore)
-      resetGame()
       changeScore(winner)
     }
-  }, [winner, resetGame, changeScore])
+  }, [winner, changeScore])
 
   return (
     <section className="App__section-board">
