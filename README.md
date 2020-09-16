@@ -18,7 +18,7 @@ View live demo ==> https://georges-tictactoe.herokuapp.com/ ✅
 - FEATURE 11 - Add automated test 👍
 - FEATURE 12 - Display current player 👍
 - FEATURE 13 - Give the game a better look 👍
-- FEATURE 14 - Add header, put reset button in the header
+- FEATURE 14 - Add header, put reset button in the header 👍
 - FEATURE 15 - Add the ability to change the board size
 - FEATURE 16 - Customize Player look, name
 - FEATURE 17 - Add redux Chrome devtools
@@ -31,6 +31,6 @@ View live demo ==> https://georges-tictactoe.herokuapp.com/ ✅
 - FEATURE 24 - Redirect HTTP to HTTPS, secure SSL https://www.npmjs.com/package/heroku-ssl-redirect
 - FEATURE 25 - Add Lazy loading and react-suspense for faster load
 - FEATURE 26 - Detect a draw
-...
+  ...
 
 ## Ressources
