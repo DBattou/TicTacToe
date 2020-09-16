@@ -12,7 +12,7 @@
   grid-template-columns: repeat(3, 8vw);
   grid-template-rows: repeat(3, 8vw);
 
-  grid-gap: 10px;
+  grid-gap: 1vw;
 
   background-color: grey;
 }
