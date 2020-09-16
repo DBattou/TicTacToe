@@ -30,6 +30,7 @@ View live demo ==> https://georges-tictactoe.herokuapp.com/ ✅
 - FEATURE 23 - Convert the website into a PWA 👍
 - FEATURE 24 - Redirect HTTP to HTTPS, secure SSL https://www.npmjs.com/package/heroku-ssl-redirect
 - FEATURE 25 - Add Lazy loading and react-suspense for faster load
+- FEATURE 26 - Detect a draw
 ...
 
 ## Ressources
