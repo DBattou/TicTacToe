@@ -23,7 +23,7 @@ function Board({ gameSize, gameState, changeGameState, winner, resetGame, change
   }, [winner, resetGame, changeScore])
 
   return (
-    <div className="App_board">
+    <section className="App__section-board">
       {Array(gameSize * gameSize)
         .fill()
         .map((_, i) => (
@@ -34,7 +34,7 @@ function Board({ gameSize, gameState, changeGameState, winner, resetGame, change
             testId={`square_${i}`}
           ></Square>
         ))}
-    </div>
+    </section>
   )
 }
 

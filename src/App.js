@@ -9,18 +9,27 @@ import CurrentPlayer from './components/currentPlayer/CurrentPlayer'
 
 function App() {
   return (
-    <Grid container spacing={10} style={{ padding: '24px' }}>
-      <Grid item xs={12} sm={4} md={4} xl={4} className="App-gridSection">
-        <CurrentPlayer />
+    <div style={{ padding: '40px' }}>
+      <Grid
+        container
+        spacing={2}
+        style={{ border: '5px dotted green' }}
+        direction="row"
+        justify="center"
+        alignItems="center"
+      >
+        <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+          <CurrentPlayer></CurrentPlayer>
+        </Grid>
+        <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+          <Board></Board>
+          <ResetButton></ResetButton>
+        </Grid>
+        <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+          <Score></Score>
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={4} md={4} xl={4} className="App-gridSection">
-        <Board />
-        <ResetButton />
-      </Grid>
-      <Grid item xs={12} sm={4} md={4} xl={4} className="App-gridSection">
-        <Score />
-      </Grid>
-    </Grid>
+    </div>
   )
 }
 

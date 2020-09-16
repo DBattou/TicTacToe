@@ -4,7 +4,7 @@ import './Score.css'
 
 function Score({ score }) {
   return (
-    <section className="App-score">
+    <section className="App__section-score">
       <h1 className="App-score-h1">SCORE</h1>
       <p className="App-score-p1">
         <span role="img" aria-label="O">

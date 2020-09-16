@@ -1,16 +1,14 @@
-.App_board {
+.App__section-board {
   display: grid;
-  justify-content: space-between;
-  align-content: space-between;
+  padding: 10px;
+  justify-content: center;
 
-  grid-template-columns: [col-1] 100px [col-2] 100px [col-3] 100px;
-  grid-template-rows: [row-1] 100px [row-2] 100px [row-3] 100px;
+  max-width: 100%;
 
-  min-height: 310px;
-  min-width: 310px;
+  grid-template-columns: repeat(3, 8vw);
+  grid-template-rows: repeat(3, 8vw);
 
-  max-height: 310px;
-  max-width: 310px;
+  grid-gap: 10px;
 
-  background-color: black;
+  border: 5px dashed blue;
 }

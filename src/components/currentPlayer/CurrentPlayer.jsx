@@ -15,7 +15,7 @@ function CurrentPlayer({ currentPlayer }) {
   }, [currentPlayer])
 
   return (
-    <section className="App-currentPlayer-container">
+    <section className="App__section-currentPlayer">
       <h1 className="App-currentPlayer" data-testid="currentPlayer_display">
         It's up to{' '}
         <span role="img" aria-label="player">

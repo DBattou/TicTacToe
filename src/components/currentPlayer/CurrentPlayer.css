@@ -1,13 +1,10 @@
-.App-currentPlayer-container {
-  margin-bottom: 40px;
-  margin-top: 40px;
-  width: 100%;
-  height: 60px;
-
+.App__section-currentPlayer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  border: 5px dashed blue;
 }
 
 .App-currentPlayer {
