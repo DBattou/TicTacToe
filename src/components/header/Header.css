@@ -29,5 +29,23 @@
 }
 
 .Header__resetButton {
+  font-family: 'ranchersregular', Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+
   margin-right: 20px;
+  height: 30px;
+  width: 100px;
+  background-color: lightseagreen;
+  border: 2px solid yellow;
+  border-radius: 5px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+.Header__resetButton:active {
+  box-shadow: 0 3px 0 #00823f;
+  top: 5px;
 }
