@@ -5,7 +5,7 @@ import './winOverlay.css'
 
 function WinOverlay({ resetGameState, winner, currentPlayer }) {
   return winner ? (
-    <div className="App__overlay">
+    <div className="App__overlay" data-testid="winingOverlay">
       <div className="Overlay__text">
         <span role="img" aria-label="player">
           {currentPlayer === 'X' ? '⭕️' : '❌'}
