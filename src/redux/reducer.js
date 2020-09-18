@@ -1,6 +1,12 @@
 import calculateWinner from '../logic/calculateWinner'
 
-import { MARK_SQUARE, RESET_GAME, CHANGE_CURRENT_PLAYER, CHANGE_SCORE } from './actions'
+import {
+  MARK_SQUARE,
+  RESET_GAME,
+  CHANGE_CURRENT_PLAYER,
+  CHANGE_SCORE,
+  RESET_BOARD,
+} from './actions'
 
 export const defaultGameSize = 3
 
@@ -35,6 +41,13 @@ export default function tictactoe(state = initialState, action) {
         gameState: initialState.gameState,
         winner: '',
         score: initialState.score,
+      }
+    }
+    case RESET_BOARD: {
+      return {
+        ...state,
+        gameState: initialState.gameState,
+        winner: '',
       }
     }
     case CHANGE_CURRENT_PLAYER: {
