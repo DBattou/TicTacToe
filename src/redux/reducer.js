@@ -30,9 +30,12 @@ export default function tictactoe(state = initialState, action) {
       return { ...state, gameState: newGameState }
     }
     case RESET_GAME: {
-      const emptyGameState = Array(state.gameSize * state.gameSize).fill('')
-
-      return { ...state, gameState: emptyGameState, winner: '' }
+      return {
+        ...state,
+        gameState: initialState.gameState,
+        winner: '',
+        score: initialState.score,
+      }
     }
     case CHANGE_CURRENT_PLAYER: {
       const newCurrentPlayer = state.currentPlayer === 'O' ? 'X' : 'O'

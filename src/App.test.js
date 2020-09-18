@@ -25,7 +25,7 @@ describe('Tic tac toe', () => {
   test('Can reset the game state by pressing the reset button ', () => {
     render(<App gameSize={gameSize}></App>, { intialState: initialState })
     const topLeftSquare = screen.getByTestId('square_0')
-    const resetButton = screen.getByText('Reset')
+    const resetButton = screen.getByText('Reset game')
 
     fireEvent.click(topLeftSquare)
 
