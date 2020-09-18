@@ -19,12 +19,6 @@ export function resetGame() {
   }
 }
 
-export function resetScore() {
-  return {
-    type: RESET_SCORE,
-  }
-}
-
 export function changeCurrentPlayer() {
   return {
     type: CHANGE_CURRENT_PLAYER,

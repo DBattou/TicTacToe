@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { resetGame, resetScore } from '../../redux/actions'
+import { resetGame } from '../../redux/actions'
 import './ResetButton.css'
 
-function ResetButton({ resetGameState, resetGameScore }) {
+function ResetButton({ resetGameState }) {
   return (
-    <button type="reset" className="Header__resetButton" onClick={resetGameScore}>
+    <button type="reset" className="Header__resetButton" onClick={resetGameState}>
       Reset game
     </button>
   )
@@ -16,9 +16,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     resetGameState: () => {
       dispatch(resetGame())
-    },
-    resetGameScore: () => {
-      dispatch(resetScore())
     },
   }
 }
