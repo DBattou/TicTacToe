@@ -1,9 +1,9 @@
 import React from 'react'
-import { resetGame } from '../../redux/actions'
+import { resetBoard } from '../../redux/actions'
 import { connect } from 'react-redux'
 import './winOverlay.css'
 
-function WinOverlay({ resetGameState, winner, currentPlayer }) {
+function WinOverlay({ resetBoard, winner, currentPlayer }) {
   return winner ? (
     <div className="App__overlay" data-testid="winingOverlay">
       <div className="Overlay__text">
@@ -11,7 +11,7 @@ function WinOverlay({ resetGameState, winner, currentPlayer }) {
           {currentPlayer === 'X' ? '⭕️' : '❌'}
         </span>
         <p>Gagne ! </p>
-        <button type="reset" onClick={resetGameState}>
+        <button type="reset" onClick={resetBoard}>
           OK
         </button>
       </div>
@@ -30,8 +30,8 @@ const mapStateToProps = (state) => {
 // Actions
 const mapDispatchToProps = (dispatch) => {
   return {
-    resetGameState: () => {
-      dispatch(resetGame())
+    resetBoard: () => {
+      dispatch(resetBoard())
     },
   }
 }

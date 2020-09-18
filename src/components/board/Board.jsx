@@ -3,14 +3,9 @@ import { connect } from 'react-redux'
 
 import './Board.css'
 import Square from '../square/Square'
-import {
-  markSquare,
-  changeCurrentPlayer,
-  resetGame,
-  changeScore,
-} from '../../redux/actions'
+import { markSquare, changeCurrentPlayer, changeScore } from '../../redux/actions'
 
-function Board({ gameSize, gameState, changeGameState, winner, resetGame, changeScore }) {
+function Board({ gameSize, gameState, changeGameState, winner, changeScore }) {
   useEffect(() => {
     if (winner) {
       changeScore(winner)
@@ -19,7 +14,6 @@ function Board({ gameSize, gameState, changeGameState, winner, resetGame, change
 
   return (
     <section className="App__section-board">
-      {/* <div className="Board__borderLimit"> */}
       {Array(gameSize * gameSize)
         .fill()
         .map((_, i) => (
@@ -30,7 +24,6 @@ function Board({ gameSize, gameState, changeGameState, winner, resetGame, change
             testId={`square_${i}`}
           ></Square>
         ))}
-      {/* </div> */}
     </section>
   )
 }
@@ -51,7 +44,6 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(markSquare(squarePosition))
       dispatch(changeCurrentPlayer())
     },
-    resetGame: () => dispatch(resetGame()),
     changeScore: (player) => dispatch(changeScore(player)),
   }
 }
