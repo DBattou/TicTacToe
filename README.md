@@ -15,7 +15,9 @@ View live demo ==> https://georges-tictactoe.herokuapp.com/ ✅
 - FEATURE 8 - Store game state using Redux 👍
 - FEATURE 9 - Make the page responsive 👍
 - FEATURE 10 - Add BEM css notation
-- FEATURE 11 - Add automated test 👍
+- FEATURE 11 - CI/CD 👍
+  1. Add automated deployment 👍
+  2. Add automated deployment 👍
 - FEATURE 12 - Display current player 👍
 - FEATURE 13 - Give the game a better look 👍
 - FEATURE 14 - Add header, put reset button in the header 👍
