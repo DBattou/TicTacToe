@@ -22,7 +22,7 @@ describe('Tic tac toe', () => {
     expect(topLeftSquare).toHaveTextContent('❌')
   })
 
-  test('Can reset the game state by pressing the reset button ', () => {
+  test('Can reset the board by pressing the reset button ', () => {
     render(<App gameSize={gameSize}></App>, { intialState: initialState })
     const topLeftSquare = screen.getByTestId('square_0')
     const resetButton = screen.getByText('Reset game')
@@ -36,6 +36,26 @@ describe('Tic tac toe', () => {
     expect(topLeftSquare).toHaveTextContent('')
   })
 
+  test('Can reset the board and the score by pressing the reset button ', () => {
+    render(<App gameSize={gameSize}></App>, { intialState: initialState })
+    const topLeftSquare = screen.getByTestId('square_0')
+    const resetButton = screen.getByText('Reset game')
+    const score = screen.getByTestId('player_X_score')
+
+    fireEvent.click(screen.getByTestId('square_0'))
+    fireEvent.click(screen.getByTestId('square_1'))
+    fireEvent.click(screen.getByTestId('square_3'))
+    fireEvent.click(screen.getByTestId('square_4'))
+    fireEvent.click(screen.getByTestId('square_6'))
+
+    expect(topLeftSquare).toHaveTextContent('❌')
+
+    fireEvent.click(resetButton)
+
+    expect(topLeftSquare).toHaveTextContent('')
+    expect(score).toHaveTextContent('0-pts')
+  })
+
   test('A winning condition should pop an alert', () => {
     render(<App gameSize={gameSize}></App>, { intialState: initialState })
 
@@ -46,6 +66,24 @@ describe('Tic tac toe', () => {
     fireEvent.click(screen.getByTestId('square_6'))
 
     expect(screen.queryByTestId('winingOverlay')).toBeTruthy()
+  })
+
+  test('Reset ONLY the board after a winning condition', () => {
+    render(<App gameSize={gameSize}></App>, { intialState: initialState })
+
+    fireEvent.click(screen.getByTestId('square_0'))
+    fireEvent.click(screen.getByTestId('square_1'))
+    fireEvent.click(screen.getByTestId('square_3'))
+    fireEvent.click(screen.getByTestId('square_4'))
+    fireEvent.click(screen.getByTestId('square_6'))
+
+    expect(screen.queryByTestId('winingOverlay')).toBeTruthy()
+    expect(screen.getByTestId('square_0')).toHaveTextContent('❌')
+
+    fireEvent.click(screen.getByText('OK'))
+
+    expect(screen.getByTestId('square_0')).toHaveTextContent('')
+    expect(screen.getByTestId('player_X_score')).toHaveTextContent('1-pts')
   })
 
   test('After a winning condition the score shoudl be updated', () => {
