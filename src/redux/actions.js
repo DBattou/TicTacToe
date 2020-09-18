@@ -1,9 +1,9 @@
 // Actions
 export const MARK_SQUARE = 'MARK_SQUARE'
 export const RESET_GAME = 'RESET_GAME'
+export const RESET_BOARD = 'RESET_BOARD'
 export const CHANGE_CURRENT_PLAYER = 'CHANGE_CURRENT_PLAYER'
 export const CHANGE_SCORE = 'CHANGE_SCORE'
-export const RESET_SCORE = 'RESET_SCORE'
 
 // Action creators
 export function markSquare(squarePosition) {
@@ -16,6 +16,12 @@ export function markSquare(squarePosition) {
 export function resetGame() {
   return {
     type: RESET_GAME,
+  }
+}
+
+export function resetBoard() {
+  return {
+    type: RESET_BOARD,
   }
 }
 
