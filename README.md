@@ -16,7 +16,7 @@ View live demo ==> https://georges-tictactoe.herokuapp.com/ ✅
 - FEATURE 9 - Make the page responsive 👍
 - FEATURE 10 - Add BEM css notation
 - FEATURE 11 - CI/CD 👍
-  1. Add automated deployment 👍
+  1. Add automated test 👍
   2. Add automated deployment 👍
 - FEATURE 12 - Display current player 👍
 - FEATURE 13 - Give the game a better look 👍
