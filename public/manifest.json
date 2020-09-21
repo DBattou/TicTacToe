@@ -6,7 +6,7 @@
   "description": "Game tic tac toe App",
   "icons": [
     {
-      "src": "icon-512x512.png",
+      "src": "icon-512x512.svg",
       "type": "image/png",
       "sizes": "512x512"
     }

@@ -3,14 +3,7 @@ import './Logo.css'
 
 function Logo(props) {
   return (
-    <svg
-      width={40}
-      height={40}
-      viewBox="0 0 1020 1020"
-      fill="none"
-      {...props}
-      className="Header__logo"
-    >
+    <svg viewBox="0 0 1020 1020" fill="none" {...props} className="Header__logo">
       <path
         d="M11 258.487L258.487 11l70.711 70.71-123.744 123.744L81.711 329.198 11 258.487z"
         fill="red"
