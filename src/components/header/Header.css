@@ -14,15 +14,6 @@
   background-color: dodgerblue;
 }
 
-.Header__logoImage {
-  height: 7vh;
-  height: 7vh;
-
-  max-width: 40px;
-  max-height: 40px;
-  margin: 10px;
-}
-
 .Header__appTitle {
   font-family: 'ranchersregular', Arial, sans-serif;
   font-weight: normal;
