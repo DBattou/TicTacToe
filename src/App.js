@@ -6,12 +6,14 @@ import Board from './components/board/Board'
 import Score from './components/score/Score'
 import CurrentPlayer from './components/currentPlayer/CurrentPlayer'
 import Header from './components/header/Header'
-import WinOverlay from './components/winOverlay/winOverlay'
+import WinOverlay from './components/overlays/winOverlay'
+import DrawOverlay from './components/overlays/drawOverlay'
 
 function App() {
   return (
     <div className="App">
       <WinOverlay></WinOverlay>
+      <DrawOverlay></DrawOverlay>
       <Header></Header>
       <div className="App__main">
         <Grid
