@@ -29,7 +29,7 @@ View live demo ==> https://georges-tictactoe.herokuapp.com/ ✅
   - 0. LigtHouse minimal PWA requirement (basically installable on mobile devices) 👍
   - 1. Redirect HTTP to HTTPS, secure SSL https://www.npmjs.com/package/heroku-ssl-redirect
   - 2. Add Lazy loading and react-suspense for faster load
-- FEATURE 26 - Detect a draw
+- FEATURE 26 - Detect a draw 👍
 - FEATURE 27 - Style 👍
   - 1. Remove some border artifacts around the squares 👍
   - 2. Use SVG icons inside the app 👍
