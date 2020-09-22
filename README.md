@@ -25,11 +25,14 @@ View live demo ==> https://georges-tictactoe.herokuapp.com/ ✅
 - FEATURE 16 - Customize Player look, name
 - FEATURE 17 - Add redux Chrome devtools. ASAP 👍
 - FEATURE 18 - Replace win window.alert with an overlay/modal 👍
-- FEATURE 23 - Convert the website into a PWA 👍(1/2) (Still need to lazy load, always redirect toward SSL)
+- FEATURE 23 - Convert the website into a PWA
+  - 0. LigtHouse minimal PWA requirement (basically installable on mobile devices) 👍
   - 1. Redirect HTTP to HTTPS, secure SSL https://www.npmjs.com/package/heroku-ssl-redirect
   - 2. Add Lazy loading and react-suspense for faster load
 - FEATURE 26 - Detect a draw
-- FEATURE 27 - Style: remove some border artifacts around the squares
+- FEATURE 27 - Style 👍
+  - 1. Remove some border artifacts around the squares 👍
+  - 2. Use SVG icons inside the app 👍
 - FEATURE 28 - Persist game state on the browser refresh 👍
 - FEATURE 29 - Play online
   - 1. Add backend with socket.io
