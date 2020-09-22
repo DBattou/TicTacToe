@@ -26,14 +26,14 @@ function App() {
             container
             xs={12}
             sm={6}
-            direction="row"
+            direction="column"
             justify="center"
             alignItems="center"
           >
             <Board></Board>
+            <CurrentPlayer></CurrentPlayer>
           </Grid>
           <Grid item xs={12} sm={3}>
-            <CurrentPlayer></CurrentPlayer>
             <Score></Score>
           </Grid>
         </Grid>
