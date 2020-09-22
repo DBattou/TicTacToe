@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, screen } from './test-utils'
+import { render, fireEvent, screen, within } from './test-utils'
 import App from './App'
 import { initialState } from './redux/reducer'
 
@@ -15,11 +15,11 @@ describe('Tic tac toe', () => {
     const topLeftSquare = screen.getByTestId('square_0')
     fireEvent.click(topLeftSquare)
 
-    expect(topLeftSquare).toHaveTextContent('❌')
+    expect(within(topLeftSquare).getByTestId('player_X')).toBeTruthy()
 
     fireEvent.click(topLeftSquare)
 
-    expect(topLeftSquare).toHaveTextContent('❌')
+    expect(within(topLeftSquare).getByTestId('player_X')).toBeTruthy()
   })
 
   test('Can reset the board by pressing the reset button ', () => {
@@ -29,11 +29,11 @@ describe('Tic tac toe', () => {
 
     fireEvent.click(topLeftSquare)
 
-    expect(topLeftSquare).toHaveTextContent('❌')
+    expect(within(topLeftSquare).getByTestId('player_X')).toBeTruthy()
 
     fireEvent.click(resetButton)
 
-    expect(topLeftSquare).toHaveTextContent('')
+    expect(within(topLeftSquare).queryByTestId('player_X')).toBeFalsy()
   })
 
   test('Can reset the board and the score by pressing the reset button ', () => {
@@ -48,11 +48,11 @@ describe('Tic tac toe', () => {
     fireEvent.click(screen.getByTestId('square_4'))
     fireEvent.click(screen.getByTestId('square_6'))
 
-    expect(topLeftSquare).toHaveTextContent('❌')
+    expect(within(topLeftSquare).getByTestId('player_X')).toBeTruthy()
 
     fireEvent.click(resetButton)
 
-    expect(topLeftSquare).toHaveTextContent('')
+    expect(within(topLeftSquare).queryByTestId('player_X')).toBeFalsy()
     expect(score).toHaveTextContent('0-pts')
   })
 
@@ -70,6 +70,7 @@ describe('Tic tac toe', () => {
 
   test('Reset ONLY the board after a winning condition', () => {
     render(<App gameSize={gameSize}></App>, { intialState: initialState })
+    const topLeftSquare = screen.getByTestId('square_0')
 
     fireEvent.click(screen.getByTestId('square_0'))
     fireEvent.click(screen.getByTestId('square_1'))
@@ -78,11 +79,11 @@ describe('Tic tac toe', () => {
     fireEvent.click(screen.getByTestId('square_6'))
 
     expect(screen.queryByTestId('winingOverlay')).toBeTruthy()
-    expect(screen.getByTestId('square_0')).toHaveTextContent('❌')
+    expect(within(topLeftSquare).getByTestId('player_X')).toBeTruthy()
 
     fireEvent.click(screen.getByText('OK'))
 
-    expect(screen.getByTestId('square_0')).toHaveTextContent('')
+    expect(within(topLeftSquare).queryByTestId('player_X')).toBeFalsy()
     expect(screen.getByTestId('player_X_score')).toHaveTextContent('1-pts')
   })
 
@@ -107,6 +108,8 @@ describe('Tic tac toe', () => {
 
     const playerDisplay = screen.getByTestId('currentPlayer_display')
 
-    expect(playerDisplay).toHaveTextContent("It's up to ⭕️ to play")
+    expect(playerDisplay).toHaveTextContent('TURN')
+    expect(within(playerDisplay).queryByTestId('player_X')).toBeFalsy()
+    expect(within(playerDisplay).getByTestId('player_O')).toBeTruthy()
   })
 })

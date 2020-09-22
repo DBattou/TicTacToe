@@ -6,8 +6,8 @@ import './CurrentPlayer.css'
 
 function CurrentPlayer({ currentPlayer }) {
   return (
-    <section className="App__section-currentPlayer">
-      <h1 className="App-turn">TURN</h1>
+    <section className="App__section-currentPlayer" data-testid="currentPlayer_display">
+      <h1 className="App-currentPlayer">TURN</h1>
       {currentPlayer === 'X' && <Cross></Cross>}
       {currentPlayer === 'O' && <Circle></Circle>}
     </section>
