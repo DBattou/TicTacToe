@@ -1,3 +1,4 @@
+import { boardIsFull } from '../logic/calculateDraw'
 import calculateWinner from '../logic/calculateWinner'
 
 import {
@@ -16,6 +17,7 @@ export const initialState = {
   gameState: Array(defaultGameSize * defaultGameSize).fill(''),
   gameSize: defaultGameSize,
   winner: '',
+  draw: false,
 }
 
 export default function tictactoe(state = initialState, action) {
@@ -33,14 +35,15 @@ export default function tictactoe(state = initialState, action) {
         return { ...state, gameState: newGameState, winner: state.currentPlayer }
       }
 
+      if (boardIsFull(newGameState)) {
+        return { ...state, gameState: newGameState, draw: true }
+      }
+
       return { ...state, gameState: newGameState }
     }
     case RESET_GAME: {
       return {
-        ...state,
-        gameState: initialState.gameState,
-        winner: '',
-        score: initialState.score,
+        ...initialState,
       }
     }
     case RESET_BOARD: {
@@ -48,6 +51,7 @@ export default function tictactoe(state = initialState, action) {
         ...state,
         gameState: initialState.gameState,
         winner: '',
+        draw: false,
       }
     }
     case CHANGE_CURRENT_PLAYER: {

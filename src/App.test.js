@@ -68,6 +68,24 @@ describe('Tic tac toe', () => {
     expect(screen.queryByTestId('winingOverlay')).toBeTruthy()
   })
 
+  test('A DRAW condition should pop an alert', () => {
+    render(<App gameSize={gameSize}></App>, { intialState: initialState })
+
+    fireEvent.click(screen.getByTestId('square_0'))
+    fireEvent.click(screen.getByTestId('square_4'))
+    fireEvent.click(screen.getByTestId('square_2'))
+
+    fireEvent.click(screen.getByTestId('square_1'))
+    fireEvent.click(screen.getByTestId('square_7'))
+    fireEvent.click(screen.getByTestId('square_3'))
+
+    fireEvent.click(screen.getByTestId('square_5'))
+    fireEvent.click(screen.getByTestId('square_8'))
+    fireEvent.click(screen.getByTestId('square_6'))
+
+    expect(screen.queryByTestId('drawOverlay')).toBeTruthy()
+  })
+
   test('Reset ONLY the board after a winning condition', () => {
     render(<App gameSize={gameSize}></App>, { intialState: initialState })
     const topLeftSquare = screen.getByTestId('square_0')
